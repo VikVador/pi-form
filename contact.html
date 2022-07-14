@@ -1,0 +1,53 @@
+<!-- templates/about.html -->
+{% extends 'base.html' %}
+{% block head-supplementary-stylesheets %}
+    {% load static %}
+    <link rel="stylesheet" href="../../static/css/contact.css" />
+{% endblock %}
+{% block content %}
+
+
+<div class="container mt-5">
+    
+    <!-- Title -->
+    <h2 class="contact-title">Contacte-nous !</h2>
+
+    <!-- Formular -->
+    <form class="row g-3" action="http://localhost:8000/VikVador1280@hotmail.com" method="POST">
+      <div class="col-md-6">
+        <label for="firstName" class="form-label">Prénom (*)</label>
+        <input type="text" class="form-control" id="firstName" required>
+      </div>
+      <div class="col-md-6">
+        <label for="lastName" class="form-label">Nom de famille (*)</label>
+        <input type="text" class="form-control" id="lastName" required>
+      </div>
+      <div class="col-md-8">
+        <label for="emailInfo" class="form-label">E-mail (*)</label>
+        <input type="email" class="form-control" id="emailInfo" required>
+      </div>
+      <div class="col-md-4">
+        <label for="phoneNumber" class="form-label">Téléphone</label>
+        <input type="text" class="form-control" id="phoneNumber" placeholder="(+32) 489 342578">
+      </div>
+      <div class="col-md-12">
+        <label for="comments" class="form-label">Commentaires, questions ? (*)</label>
+        <textarea class="form-control" id="comments" rows="3" required></textarea>
+      </div>
+
+      <!-- Required field -->
+      <div class="field">
+        (*) Champs obligatoires
+      </div>
+
+      <div class="up"></div>
+
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-outline-success">Envoyer</button>
+      </div>
+    </form>
+</div>
+<div class="bottom"></div>
+
+{% endblock %}
+
